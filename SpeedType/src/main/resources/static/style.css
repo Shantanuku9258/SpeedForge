@@ -1,0 +1,160 @@
+/* Reset & Base */
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background: #f2f2f2;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  transition: background-color 0.4s, color 0.4s;
+}
+
+.container {
+  margin-top: 50px;
+}
+
+h1 {
+  color: inherit;
+}
+
+/* Text to type */
+.text-box {
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 15px;
+  width: 60%;
+  margin: 0 auto 20px;
+  font-size: 18px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  min-height: 80px;
+  transition: background-color 0.4s, color 0.4s;
+}
+
+/* Input area */
+textarea {
+  width: 60%;
+  height: 120px;
+  font-size: 16px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: none;
+  transition: background-color 0.4s, color 0.4s, border-color 0.4s;
+}
+
+/* Buttons */
+button {
+  margin: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Result text */
+.results {
+  margin-top: 20px;
+  font-size: 20px;
+  color: inherit;
+}
+
+/* Character highlights */
+.correct {
+  background-color: #d4edda;
+  color: green;
+  padding: 2px 4px;
+  border-radius: 3px;
+  display: inline-block;
+}
+
+.incorrect {
+  background-color: #f8d7da;
+  color: red;
+  padding: 2px 4px;
+  border-radius: 3px;
+  display: inline-block;
+}
+
+/* Countdown */
+.countdown {
+  font-size: 24px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #007bff;
+}
+
+/* Buttons container */
+.buttons {
+  margin-top: 10px;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+body.dark-mode .text-box {
+  background-color: #1e1e1e;
+  border-color: #444;
+  color: #e0e0e0;
+}
+
+body.dark-mode textarea {
+  background-color: #1e1e1e;
+  border-color: #444;
+  color: #e0e0e0;
+}
+
+body.dark-mode button {
+  background-color: #0d6efd;
+  color: #f0f0f0;
+}
+
+body.dark-mode button:hover {
+  background-color: #0b5ed7;
+}
+
+body.dark-mode .correct {
+  background-color: #2e7d32;
+  color: #a5d6a7;
+}
+
+body.dark-mode .incorrect {
+  background-color: #b71c1c;
+  color: #ef9a9a;
+}
+
+/* Dark mode toggle button style */
+.dark-mode-btn {
+  background-color: #6c757d;
+  margin-bottom: 15px;
+}
+
+.dark-mode-btn:hover {
+  background-color: #5a6268;
+}
+
+/* Responsive Design */
+@media (max-width: 700px) {
+  .text-box,
+  textarea {
+    width: 90%;
+  }
+
+  button {
+    width: 90%;
+    max-width: 300px;
+  }
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Typing Speed Test</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Typing Speed Test</h1>
+
+    <!-- Dark Mode Toggle -->
+    <button id="darkModeToggle" class="dark-mode-btn">🌙 Dark Mode</button>
+
+    <!-- Countdown Timer -->
+    <div id="countdown" class="countdown"></div>
+
+    <!-- Text to Type -->
+    <div class="text-box" id="text-to-type"></div>
+
+    <!-- Typing Input Box -->
+    <textarea id="input-box" placeholder="Start typing here..." disabled></textarea>
+
+    <!-- Buttons -->
+    <div class="buttons">
+      <button onclick="restartTest()">Restart</button>
+    </div>
+
+    <!-- Results Display -->
+    <div class="results" id="results"></div>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    // Dark Mode Toggle Logic
+    const toggleBtn = document.getElementById('darkModeToggle');
+    toggleBtn.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      if(document.body.classList.contains('dark-mode')){
+        toggleBtn.textContent = '☀️ Light Mode';
+      } else {
+        toggleBtn.textContent = '🌙 Dark Mode';
+      }
+    });
+  </script>
+</body>
+</html>
