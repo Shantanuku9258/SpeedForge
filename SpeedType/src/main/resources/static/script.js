@@ -136,6 +136,34 @@ function sendResultToBackend(username, wpm, accuracy, timeSeconds) {
     .then(data => console.log("Saved:", data))
     .catch(err => console.error("Error:", err));
 }
+// Fetch and render leaderboard data
+function loadLeaderboard() {
+  fetch("http://localhost:8080/api/leaderboard")
+    .then(res => res.json())
+    .then(data => renderLeaderboard(data))
+    .catch(err => console.error("Leaderboard fetch error:", err));
+}
+
+// Render leaderboard rows dynamically
+function renderLeaderboard(data) {
+  const tbody = document.getElementById("leaderboard-body");
+  tbody.innerHTML = ""; // clear previous content
+
+  data.forEach((entry, index) => {
+    const row = document.createElement("tr");
+
+    row.innerHTML = `
+      <td>${index + 1}</td>
+      <td>${entry.username}</td>
+      <td>${entry.avgWpm.toFixed(2)}</td>
+      <td>${entry.avgAccuracy.toFixed(2)}</td>
+      <td>${entry.testCount}</td>
+      <td>${new Date(entry.lastTestDate).toLocaleString()}</td>
+    `;
+
+    tbody.appendChild(row);
+  });
+}
 
 // Restart button handler
 function restartTest() {
@@ -143,4 +171,8 @@ function restartTest() {
 }
 
 // Start the test when page loads
-window.onload = initTest;
+window.onload = function () {
+  initTest();
+  loadLeaderboard();
+};
+

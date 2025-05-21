@@ -28,6 +28,31 @@
 
     <!-- Results Display -->
     <div class="results" id="results"></div>
+
+    <!-- 🏆 Leaderboard Section -->
+    <h2>🏆 Leaderboard</h2>
+    <div class="leaderboard">
+      <table>
+        <thead>
+          <tr>
+            <th>Rank</th>
+            <th>Name</th>
+            <th>WPM</th>
+            <th>Accuracy (%)</th>
+            <th>Tests Taken</th>
+            <th>Last Test Date</th>
+          </tr>
+        </thead>
+        <tbody id="leaderboard-body">
+          <!-- Leaderboard rows will be dynamically inserted here -->
+           window.onload = function () {
+  initTest();
+  loadLeaderboard();
+};
+
+        </tbody>
+      </table>
+    </div>
   </div>
 
   <script src="script.js"></script>
@@ -36,11 +61,7 @@
     const toggleBtn = document.getElementById('darkModeToggle');
     toggleBtn.addEventListener('click', () => {
       document.body.classList.toggle('dark-mode');
-      if(document.body.classList.contains('dark-mode')){
-        toggleBtn.textContent = '☀️ Light Mode';
-      } else {
-        toggleBtn.textContent = '🌙 Dark Mode';
-      }
+      toggleBtn.textContent = document.body.classList.contains('dark-mode') ? '☀️ Light Mode' : '🌙 Dark Mode';
     });
   </script>
 </body>
